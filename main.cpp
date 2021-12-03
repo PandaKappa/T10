@@ -1,9 +1,13 @@
-double my_pow(double x, unsigned int s)
+double b_pow(double x, int s)
 {
-    double f = x;
-    for (int i = 1; i < s; i++)
+    if (s == 0)
     {
-        f = f * x;
+        return 1;
+
     }
-    return f;
+    if (s % 2 == 0)
+    {
+        return b_pow(x * x, s / 2);
+    }
+    return x * b_pow(x, s - 1);
 }
